@@ -1,0 +1,228 @@
+% TEX compiler = lualatex (Verifique no Menu se está habilitado)
+%
+%----------------Escolha uma dos estilos abaixo------------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[Portugues,Final]{comandos} % relatorio
+%\documentclass[Portugues,Final,TwoSide]{comandos} % livro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 Dúvidas acima? Leia abaixo:
+% - Primeiramente, escolha: Portugues ou Ingles ou Espanhol.
+% - Para a versão final do texto, acrescente a palavra "Final":
+%\documentclass[Ingles,Final]{configuracoes}
+
+% - Há dois modos de impressão configurados, Oneside - para impresso
+% estilo relatório (ou pdf para visualização na web ou computador),
+%e o estilo TwoSide - apropriado para impressão como um livro.
+
+% - Para uma compilação mais rápida, utilize a opção "Draft":
+%\documentclass[Portugues,Draft]{configuracoes}
+
+% - Adicione também a opção "noFig" para gerar arquivos mais leves:
+%\documentclass[Portugues,Draft,noFig]{configuracoes}
+
+% - Para gerar uma avaliacao antiplagio pelo Turnitin:
+%\documentclass[Portugues,Final,Turnitin]{configuracoes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configurações gerais do documento: (não edite)
+\addbibresource{bibliografia.bib}
+\setlength{\headheight}{14.5pt}
+
+\usetikzlibrary{calc}
+
+% Estilização dos Títulos de Capítulo e Apêndice:
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries}
+  {\fontSourceSans\bfseries\color{dtecs_titulo_azul}\LARGE\chaptertitlename~\thechapter}
+  {-10pt}
+  {\huge}
+
+% Definições para ficha catalográfica
+\makeatletter
+\StrBefore{\@autor}{ }[\@autorprenome]
+\StrBehind{\@autor}{ }[\@autorsobrenome]
+\makeatother
+
+% Definições do glossário
+\loadglsentries{Elementos/glossario}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Preencha os dados na sequência abaixo:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} 
+% Escolha entre autor ou autora:
+\autor{Nome do autor}
+%\autora{Nome da Autora}
+
+% Comandos para a ficha catalográfica (formato ABNT)
+\autorprenome{Prenome do autor}
+\autorsobrenome{Ultimo Nome}
+% O mesmo para o orientador:
+\orientadorprenome{Nome Completo do}
+\orientadorsobrenome{Orientador}
+
+% Sempre deve haver um título em português:
+\titulo{Título da Dissertação ou Tese em Português}
+\subtitulo{Subtítulo da Dissertação ou Tese} % Se houver
+
+% Se a língua for o inglês ou o espanhol defina:
+%\title{The Dissertation or Thesis Title in English or Spanish}
+
+% --- PALAVRAS-CHAVE ---
+\palavraschave{Palavra1}{Palavra2}{Palavra3} %----ESCREVA AQUI----%
+
+% Escolha entre orientador ou orientadora e inclua os títulos:
+\orientador{Prof. Dr. Nome do Orientador}
+%\orientadora{Profa. Dra. Nome da Orientadora}
+
+% Escolha entre coorientador ou coorientadora, se houver:
+%\coorientador{Prof. Dr. Eng. Lic. Nome do Co-Orientador}
+%\coorientadora{Prof. Dra. Eng. Lic. Nome da Co-Orientadora}
+
+% Escolha entre uma das seis opções a seguir (comente as demais):
+%\tcc                   % para Trabalho de Conclusão de Curso.
+%\qualificacaoMestrado  % Para textos de qualificação de mestrado.
+%\qualificacaoDoutorado % Para textos de qualificação de doutorado.
+\mestrado               % para Dissertação de Mestrado.
+%\doutorado             % para Tese de Doutorado.
+
+%Defina a área de concentração. Se for TCC, deixe comentado.
+\areaConcentracao{Desenvolvimento e Sociedade}
+%\areaConcentracao{Desenvolvimento e Tecnologias}
+
+% Se houve cotutela, defina:
+%\cotutela{Universidade XXX}
+
+% Defina a data da defesa no formato {Dia}{Mês}{Ano}
+% Use apenas números! O template transformará em palavras,
+% se necessário.
+\datadadefesa{25}{7}{2025} % ----------IMPORTANTE------------ %
+
+% Para a versão final defina:
+% Repita o nome do Orientador(a) no primeiro avaliador
+\avaliadorA{Prof. Dr. Nome do Orientador}{PPG-DTECS/UNIFEI}
+\avaliadorB{Profa. Dra. Segunda Avaliadora}{Instituição da segunda avaliadora}
+\avaliadorC{Dr. Terceiro Avaliador}{Instituição do terceiro avaliador}
+% \avaliadorD{Prof. Dr. Quarto Avaliador}{Instituição do quarto avaliador}
+% \avaliadorE{Prof. Dr. Quinto Avaliador}{Instituição do quinto avaliador}
+% \avaliadorF{Prof. Dr. Quinto Avaliador}{Instituição do sexto avaliador}
+
+% Descomente na versão final, caso prefira anexar a ficha de um PDF:
+%\fichaCatalografica{SeuArquivo.pdf}
+
+% Para deixar uma página em branco no lugar da ficha 
+% catalográfica, descomente uma das três linhas a seguir:
+%\fichaCatalografica{branco.pdf} % Português
+%\fichaCatalografica{white.pdf}  % Inglês
+%\fichaCatalografica{blanco.pdf} % Espanhol
+
+% Descomente a linha abaixo se seu trabalho tiver ilustrações
+\newif\ifhasillustrations\hasillustrationstrue 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --- Inicio das páginas pré-textuais  ---
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% (Não edite aqui. Em caso de erros, entre em contato com o PPG)
+\paginasiniciais
+  \pagestyle{empty} % páginas pré-textuais sem cabeçalho/rodapé
+  \setlength{\oldparindent}{\parindent}
+  \setlength\parindent{0pt}
+  \makeatletter
+  \let\ps@mystyle\ps@plain
+  \let\ps@plain\ps@empty
+  \hypersetup{
+    pdfcreator   = {Criado com o modelo para teses e dissertações do PPG-DTECS, elaborado por Matheus Mendonça dos Reis, Ms.},
+    pdftitle     = {\@titulo},
+    pdfauthor    = {\if\@autora\relax\@autor\else\@autora\fi},
+    pdfsubject   = {\@monopt\xspace apresentada ao Programa de Pós-Graduação em Desenvolvimento, Tecnologias e Sociedade da Universidade Federal de Itajubá como parte dos requisitos para a obtenção do título de \@degnamept\xspace.}
+}
+\label{pretextual-end}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --- Fim das páginas pré-textuais / Início das textuais ---
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% (Não edite aqui. Em caso de erros, entre em contato com o PPG)
+\fimdaspaginasiniciais{
+  \cleardoublepage
+  \makeatletter
+  \let\ps@plain\ps@mystyle
+  \makeatother
+  % Definição das primeiras páginas dos capítulos
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[R]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\headheight}{14.49999pt}
+  }
+  % Definição das demais páginas do texto
+  \fancypagestyle{headings}{%
+    \fancyhf{}
+    \ifprintversion % SE o modo TwoSide estiver ATIVO
+      \fancyhead[LE]{\thepage \hspace{1em} \textsc{\nouppercase{\leftmark}}}
+      \fancyhead[RO]{\textsc{\nouppercase{\rightmark}} \hspace{1em} \thepage}
+    \else % SE for o modo padrão (oneside)
+      \fancyhead[L]{\textsc{\nouppercase{\leftmark}}}
+      \fancyhead[R]{\thepage}
+    \fi
+    \renewcommand{\headrulewidth}{1pt}
+    \renewcommand{\headheight}{14.49999pt}
+  }
+  \pagestyle{headings} % ATIVA o estilo de página com numeração
+  \setstretch{1.5}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% O corpo da dissertação ou tese começa aqui: (Adapte se necessário)
+\include{Capitulos/01-introducao}
+\include{Capitulos/02-referencial}
+\include{Capitulos/03-metodologia}
+\include{Capitulos/04-resultados}
+\include{Capitulos/05-discussao}
+\include{Capitulos/06-consideracoes}
+
+% O comando condicional \ifturnitin a seguir é importante para 
+% preparar o texto para encaminhamento ao Turnitin. 
+% NÃO REMOVA!
+% O \fi correspondente está antes do \end{document}
+\ifturnitin
+    \relax
+\else 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Elementos pós-textuais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define espaçamento simples em cada referência
+\begin{singlespacing}
+
+% Adiciona uma linha em branco entre duas referências
+\setlength\bibitemsep{10pt}   
+%
+% Adiciona as referências bibliográficas.
+% Mude o título (title), caso o texto seja em inglês 
+% ou espanhol.
+\printbibliography[heading=bibintoc, % Adiciona no sumário
+                   title={Referências bibliográficas} % Nome do Capítulo
+                  ]
+\end{singlespacing}
+
+% Os anexos, se houver, vêm depois das referências:
+\appendix
+
+% O comando a seguir inclui o arquivo apendices.tex
+% que contém os apêndices. Observe o comando \appendix
+% na linha anterior
+\include{Elementos/apendices}
+%
+%% O comando \fi a seguir é obrigatório para o controle 
+%% da opção "turnitin". Não o remova!
+% ... (final do seu documento, apêndices, etc.) ...
+\fi % Este é o \fi do bloco do Turnitin
+
+% Exibe a "quarta capa" conhecida como capa de trás
+\quartacapa
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document} % Prontinho! Quebre a perna!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

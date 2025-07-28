@@ -1,0 +1,53 @@
+% --- CONTEÚDO DA FOLHA DE APROVAÇÃO ---
+\makeatletter
+\iffinalversion
+  \begin{center}
+    \large\bfseries\MakeUppercase{Folha de Aprovação}
+  \end{center}
+  \vspace{2cm}
+
+  \noindent Abaixo se apresentam os membros da comissão julgadora da sessão pública de defesa de dissertação para o Título de \@degnamept\xspace na área de concentração \@areaConcentracao, a que se submeteu \@artigo\xspace alun\@artigo\xspace \if\@autora\relax\@autor\else\@autora\fi, em \@dia\xspace de \ifcase \@mes \or janeiro\or fevereiro\or março\or abril\or maio\or junho\or julho\or agosto\or setembro\or outubro\or novembro\or dezembro\fi\xspace de \@ano\xspace no \@UNIDADEENSINO{} -- \@UNIDADEENSINOABREV/UNIFEI, em \@CIDADE/MG.
+
+  \vfill
+
+  \ifx\@avalA\relax
+  \else
+    \noindent \textbf{\@avalA} \par
+    \noindent Presidente da Comissão Julgadora \par \vspace{2.5em}
+
+    \ifx\@avalB\relax\else
+      \noindent \textbf{\@avalB} \par
+      \noindent \@instavalB \par \vspace{2.5em}
+    \fi
+    
+    \ifx\@avalC\relax\else
+      \noindent \textbf{\@avalC} \par
+      \noindent \@instavalC \par \vspace{2.5em}
+    \fi
+    
+    \ifx\@avalD\relax\else
+      \noindent \textbf{\@avalD} \par
+      \noindent \@instavalD \par \vspace{2.5em}
+    \fi
+    
+    \ifx\@avalE\relax\else
+      \noindent \textbf{\@avalE} \par
+      \noindent \@instavalE \par \vspace{2.5em}
+    \fi
+    
+    \ifx\@avalF\relax\else
+      \noindent \textbf{\@avalF} \par
+      \noindent \@instavalF
+    \fi
+  \fi
+
+  \vfill
+  \suppresshyphens
+  \noindent
+  Ata da defesa, assinada pelos membros da Comissão Examinadora, encontra-se no SIGAA-SIPAC/Sistema de Fluxo de Dissertação/Tese e na Secretaria de \@nivelEnsino\xspace da \@UNIDADEENSINO.
+  \vfill
+\else
+  \exampleinfo{
+  Na versão final, esta página será substituída por outra informando a composição da banca e que a ata de defesa está arquivada pela \@UNIFEI.}
+\fi
+\makeatother

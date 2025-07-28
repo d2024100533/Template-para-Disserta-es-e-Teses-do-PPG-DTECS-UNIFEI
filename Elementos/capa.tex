@@ -1,0 +1,39 @@
+% --- CONTEÚDO DA CAPA ---
+\makeatletter
+\thispagestyle{empty}
+
+% Adiciona a imagem de fundo na página atual
+\AddToShipoutPictureBG*{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{Elementos/logotipos/dtecs-Capa.pdf}%
+}
+
+% Usa o ambiente tikz para posicionar o texto sobre a imagem
+\begin{tikzpicture}[remember picture, overlay]
+
+    % --- Título e Subtítulo ---
+    \node[anchor=north west, text width=14cm, align=left]
+    at ($(current page.north west)+(2cm, -9.5cm)$) {
+        % Título principal (usa a cor do tema)
+        {\fontSourceSans\fontsize{24}{36}\selectfont\bfseries\color{accentcolor} \MakeUppercase{\@titulo}}
+        % Lógica do subtítulo
+        \ifx\@subtitulo\relax\else
+            \\[0.5cm] % Adiciona um espaço vertical
+            {\fontSourceSans\fontsize{20}{20}\selectfont \color{dtecs_subtitulo_cinza} \@subtitulo}
+        \fi
+    };
+
+    % --- Autor ---
+    \node[anchor=north west, text width=12cm, align=left, text=accentcolor]
+    at ($(current page.north west)+(2cm, -15cm)$) {
+        {\fontSourceSans\fontsize{18}{22}\selectfont\bfseries \if\@autora\relax\@autor\else\@autora\fi}
+    };
+
+    % --- Local e Data ---
+    \node[anchor=south, text width=12cm, align=left, text=accentcolor]
+    at ($(current page.south)+(-2.5cm, 2.5cm)$) {
+        {\fontSourceSans\fontsize{14}{18}\selectfont \MakeUppercase{\@CIDADE} \par \@ano}
+    };
+\end{tikzpicture}
+
+\vfill % Garante que a página seja preenchida e processada corretamente
+\makeatother

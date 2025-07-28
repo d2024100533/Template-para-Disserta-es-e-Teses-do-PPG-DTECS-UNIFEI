@@ -1,0 +1,57 @@
+% --- CONTEÚDO DA FOLHA DE ROSTO ---
+\makeatletter
+  \begin{center}
+    \large\bfseries
+    \@UNIFEI \\
+    \@UNIDADEENSINO
+  \end{center}
+  \vfill
+  \begin{center}
+    \large\bfseries
+    \if\@autora\relax\@autor\else\@autora\fi
+  \vfill
+    \@titulo
+    \ifx\@subtitulo\relax\else
+      \\[0.5cm]
+      \normalfont
+      \@subtitulo
+    \fi
+  \end{center}
+  \vfill
+  \normalfont\normalsize
+  \hfill
+  \begin{minipage}[t]{0.54\textwidth}
+    \suppresshyphens
+    \@monopt\xspace apresentada ao \@UNIDADEENSINO{} da \@UNIFEI{} como parte dos requisitos para a obtenção do título de \@degnamept\xspace \ifx\@areaConcentracao\relax\else, na área de \@areaConcentracao\fi \ifx\@cotutela\relax\else\xspace, no âmbito do acordo de Cotutela firmado entre a Unifei e a \@cotutela\fi.
+  \end{minipage}
+  \vfill
+  \if\@orientadora\relax {\bfseries Orientador: \@orientador}
+  \else {\bfseries Orientadora: \@orientadora}
+  \fi
+  \ifnum\@advisors=2
+    \par\addvspace{1em}
+    \if\@coorientadora\relax {\bfseries Coorientador: \@coorientador}
+    \else {\bfseries Coorientadora: \@coorientadora}
+    \fi
+  \fi
+  \vfill
+  \iffinalversion
+    \begin{minipage}[t]{0.5\textwidth}
+      \suppresshyphens
+      Este trabalho corresponde à versão final da \@monopt\xspace defendida por
+      \if\@autora\relax\@autor\else\@autora\fi\xspace e orientada
+      \if\@orientadora\relax pelo \@orientador\else pela \@orientadora\fi.
+    \end{minipage}
+  \else
+    \begin{minipage}[t]{0.5\textwidth}
+      \suppresshyphens
+      Este exemplar corresponde à versão da \@monopt\xspace entregue
+      à banca antes da defesa.
+    \end{minipage}
+  \fi
+  \vfill
+  \begin{center}
+    \large
+    \@CIDADE\\ \@ano
+  \end{center}
+\makeatother

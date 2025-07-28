@@ -1,0 +1,77 @@
+% --- CONTEÚDO DA FICHA CATALOGRÁFICA (VERSÃO CORRIGIDA E FINAL) ---
+\begingroup 
+\makeatletter
+
+% --- Bloco de Texto Superior (Copyright e Como Citar) ---
+\begin{center}
+  \begin{minipage}{0.9\textwidth}
+    \normalsize 
+    \setlength{\parindent}{0pt} 
+    
+    \scalebox{1.65}{\ccbyncnd}
+    
+    \vspace{1em}
+    
+    \@autor, \@UNIDADEENSINO{}.
+    \noindent Obra licenciada sob uma Licença Creative Commons. \@ano
+    
+    \vspace{1em}
+    
+    Esta dissertação é um trabalho original, escrito exclusivamente para este fim, e todos os autores cujos estudos e publicações contribuíram para o trabalho foram devidamente citados.
+    
+    A reprodução parcial é permitida com reconhecimento do autor e referência ao grau, ano letivo, instituição e data da defesa pública.
+    
+    \vspace{1em}
+    
+    \textbf{Contato:} seunome@email.com (substitua pelo seu e-mail)
+    
+    \vspace{1em}
+    
+    \textbf{Como citar (NBR 10520:2023):}\\
+    \@autorsobrenome, \@autorprenome. \textit{\@titulo}. \@ano. \@monopt{} (\@degnamept) -- \@UNIFEI, \@CIDADE, \@ano.
+    
+  \end{minipage}
+\end{center}
+
+\vfill 
+
+% --- Ficha Catalográfica ---
+\begin{center}
+\exampleinfo{Valide os dados com a Biblioteca da Unifei} %REMOVER!!!!%
+\fbox{
+  \begin{minipage}[t][10cm][t]{12.5cm}
+    \small 
+    \setlength{\parindent}{0pt}
+
+    {\raggedleft % Alinha o bloco de texto à direita
+    % Estes dados são fornecidos pela biblioteca
+    C999x \\ 
+    999.9 \\
+    }
+
+    \vspace{1.5cm}
+
+    \@autorsobrenome, \@autorprenome
+
+    \hspace{0.5cm} \@titulo{} / \@autor. --
+    \@CIDADE, \@ano.
+    
+    \hspace{0.5cm} \pageref{pretextual-end} f., \pageref{LastPage} f. \ifhasillustrations: il.\fi
+
+    \vspace{0.5cm}
+    
+    \hspace{0.5cm} \@monopt{} (\@degnamept) -- \@UNIFEI, \@CIDADE, \@ano.
+
+    \vspace{0.5cm}
+
+    \hspace{0.5cm} Orientador: \if\@orientadora\relax\@orientador\else\@orientadora\fi.
+
+    \vspace{1cm}
+    
+    \hspace{0.5cm} 1. \@palavrachaveum. 2. \@palavrachavedois. 3. \@palavrachavetres. \\
+    I. Título. II. Orientador (\@orientadorsobrenome, \@orientadorprenome). III. \@UNIFEI.
+  \end{minipage}
+}
+\end{center}
+\makeatother
+\endgroup
