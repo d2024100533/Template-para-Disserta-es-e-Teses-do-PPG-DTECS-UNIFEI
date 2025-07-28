@@ -10,6 +10,8 @@ Esse modelo e seu respectivo arquivo de classe de documento foram adaptados do m
 
     ORCID: https://orcid.org/0009-0001-2062-0536
 
+    Github: https://github.com/d2024100533/Template-para-Dissertacoes-e-Teses-do-PPG-DTECS-UNIFEI
+    
 Última versão: 27/julho/2025.
 
 Adições/Alterações nesta última versão:
