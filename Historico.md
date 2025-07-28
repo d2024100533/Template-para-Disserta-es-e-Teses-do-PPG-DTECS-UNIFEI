@@ -19,6 +19,8 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+O template foi baseado e respeita as seguinte normas:
+
 ABNT NBR 14724:2024 - Trabalhos Acadêmicos - Apresentação: A norma principal que dita a estrutura geral do documento, incluindo a ordem dos elementos (pré-textuais, textuais e pós-textuais), formato de margens, espaçamento e paginação.
 
 ABNT NBR 10520:2023 - Citações em Documentos - Apresentação: Define as regras para a apresentação de citações no texto, como o sistema autor-data (SOBRENOME, ano) que o template utiliza de forma automatizada.
