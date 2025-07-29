@@ -11,14 +11,14 @@
 \begin{tikzpicture}[remember picture, overlay]
 
     % --- Título e Subtítulo ---
-    \node[anchor=north west, text width=14cm, align=left]
+    \node[anchor=north west, text width=15.5cm, align=left]
     at ($(current page.north west)+(2cm, -9.5cm)$) {
         % Título principal (usa a cor do tema)
         {\fontSourceSans\fontsize{24}{36}\selectfont\bfseries\color{accentcolor} \MakeUppercase{\@titulo}}
         % Lógica do subtítulo
         \ifx\@subtitulo\relax\else
             \\[0.5cm] % Adiciona um espaço vertical
-            {\fontSourceSans\fontsize{20}{20}\selectfont \color{dtecs_subtitulo_cinza} \@subtitulo}
+            {\fontSourceSans\fontsize{18}{20}\selectfont \color{dtecs_subtitulo_cinza} \@subtitulo}
         \fi
     };
 

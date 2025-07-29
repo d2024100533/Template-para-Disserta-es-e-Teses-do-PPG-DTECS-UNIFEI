@@ -83,6 +83,8 @@
 \RequirePackage{fancyhdr}
 
 % Pacotes necessários para os módulos de personalização
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
 \usepackage{emptypage}
 \usepackage{xstring} % Needed for \StrLastBefore, \StrLastAfter, \StrBehind
 \usepackage{pdflscape} % For the landscape environment% Custom environment for exampleinfo

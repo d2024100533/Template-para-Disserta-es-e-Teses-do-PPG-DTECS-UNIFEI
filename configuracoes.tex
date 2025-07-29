@@ -2,10 +2,11 @@
 %
 %----------------Escolha uma dos estilos abaixo------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[Portugues,Final]{comandos} % relatorio
+\documentclass[Portugues,Final, oneside]{comandos} % relatorio
 %\documentclass[Portugues,Final,TwoSide]{comandos} % livro
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                 Dúvidas acima? Leia abaixo:
+% Opções: Portugues/Ingles/Espanhol, Final/Draft, TwoSide/oneside
 % - Primeiramente, escolha: Portugues ou Ingles ou Espanhol.
 % - Para a versão final do texto, acrescente a palavra "Final":
 %\documentclass[Ingles,Final]{configuracoes}
@@ -127,7 +128,7 @@
 \paginasiniciais
   \pagestyle{empty} % páginas pré-textuais sem cabeçalho/rodapé
   \setlength{\oldparindent}{\parindent}
-  \setlength\parindent{0pt}
+  %\setlength\parindent{0pt}
   \makeatletter
   \let\ps@mystyle\ps@plain
   \let\ps@plain\ps@empty
